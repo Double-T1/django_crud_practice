@@ -1,0 +1,14 @@
+{% extends "layouts/base.html" %}
+
+{% block content %}
+<div>
+    <form action="{% url "products:each" product.id%}" method="POST">
+        {% csrf_token %}
+
+        {{form}}
+
+        <button>save thid edit</button>
+    </form>
+    <a href="{% url "products:each" product.id%}">discard this edit</a>
+</div>
+{% endblock %}

@@ -1,0 +1,14 @@
+{% extends "layouts/base.html" %}
+
+{% block content %}
+<div>
+    <form action="{% url "products:index" %}" method="POST">
+        {% csrf_token %}
+
+        {{form}}
+
+        <button>add this new product</button>
+    </form>
+    <a href="{% url "products:index" %}">back to home page</a>
+</div>
+{% endblock %}

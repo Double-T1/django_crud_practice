@@ -1,0 +1,19 @@
+{% extends "layouts/base.html" %}
+
+{% block content %}
+<div>
+    <h1>{{product.title}}</h1>
+    <article>{{product.description}}</article>
+    <p>{{product.price}}</p>
+
+    <div>
+        <a href="{% url "products:edit" product.id%}">edit this product</a>
+    </div>
+
+    <div>
+        <a onClick="return confirm('you sure you want to delete this product?')" href="{% url "products:delete" product.id%}">delete this product</a>
+    </div>
+
+    <a href="{% url "products:index" %}">back to home page</a>
+</div>
+{% endblock %}
